@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список автомобилей</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+    <center>
+    <h3>Список автомобилей</h3>
+    <br>
+    <a href="/create" class="btn">Добавить авто</a>
+    <a href="/recover" class="btn">Восстановить список</a>
+    <a href="/clear" class="btn">Очистить список</a>
+    <table>
+        <tr>
+            <th>Редактор</th>
+            <th>Бренд&nbsp;<a href="/sort/brand.ASC">▲</a><a href="/sort/brand.DESC">▼</a></th>
+            <th>Модель</th>
+            <th>Цвет</th>
+            <th>Оптовая цена&nbsp;<a href="/sort/priceOpt.ASC">▲</a><a href="/sort/priceOpt.DESC">▼</a></th>
+            <th>Розничная цена&nbsp;<a href="/sort/priceRoz.ASC">▲</a><a href="/sort/priceRoz.DESC">▼</a></th>
+        </tr>
+        {{#each auto}}
+            <tr>
+                <td width=180 class="editor">
+                    <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить" />
+                    </form>
+                    <form action="/delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" />
+                    </form>
+                </td>
+                <td>{{this.brand}}</td>
+                <td>{{this.model}}</td>
+                <td>{{this.color}}</td>
+                <td>{{this.priceOpt}}</td>
+                <td>{{this.priceRoz}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    </center>
+</body>
+<html>
