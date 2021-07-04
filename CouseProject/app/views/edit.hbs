@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Изменить данные</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+<body>
+    <h1>Изменить данные</h1>
+    <form action="/edit" method="POST">
+        <input type="hidden" name="id" value="{{auto.id}}" />
+        
+        <label>Бренд</label><br>
+        <input name="brand" class="field" value="{{auto.brand}}" /><br><br>
+
+        <label>Модель</label><br>
+        <input name="model" class="field" value="{{auto.model}}" /><br><br>
+        
+        <label>Цвет</label><br>
+        <input name="color" class="field" value="{{auto.color}}" /><br><br>
+
+        <label>Оптовая цена</label><br>
+        <input name="priceOpt" type="number" class="field" min="1" max="1000000000" step="1" value="{{auto.priceOpt}}" /><br><br>
+
+        <label>Розничная цена</label><br>
+        <input name="priceRoz" type="number" class="field" min="1" max="1000000000" step="1" value="{{auto.priceRoz}}" /><br><br>
+        
+        <input type="submit" value="Сохранить" />
+    </form>
+    <br>
+    <a href="/">На главную</a>
+</body>
+<html>
